@@ -128,6 +128,35 @@ function lock(){
  else {loginGate.classList.remove("hidden");document.body.classList.add("is-locked")}
 }
 
+// Login demo: name + code KEBA. Prevent the form from reloading the page.
+loginForm?.addEventListener("submit", (e)=>{
+ e.preventDefault();
+ const name=(userNameInput?.value || "").trim();
+ const code=(accessCodeInput?.value || "").trim().toUpperCase();
+ if(name.length < 2){
+   if(loginError) loginError.textContent="Veuillez entrer votre nom (au moins 2 caractères).";
+   userNameInput?.focus();
+   return;
+ }
+ if(code !== "KEBA"){
+   if(loginError) loginError.textContent="Code d'accès incorrect. Utilisez KEBA.";
+   accessCodeInput?.focus();
+   return;
+ }
+ if(loginError) loginError.textContent="";
+ currentUser=name;
+ localStorage.setItem("keba_user", currentUser);
+ unlock();
+ location.hash = "home";
+ route();
+});
+
+document.querySelector("#showCode")?.addEventListener("click", ()=>{
+ if(!accessCodeInput) return;
+ const visible=accessCodeInput.type === "text";
+ accessCodeInput.type=visible ? "password" : "text";
+});
+
 function route(){
  if(!currentUser){document.body.classList.add("is-locked");return}
  const hash=location.hash.replace("#","")||"home";

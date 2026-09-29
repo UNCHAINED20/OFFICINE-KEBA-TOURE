@@ -138,8 +138,8 @@ loginForm?.addEventListener("submit", (e)=>{
    userNameInput?.focus();
    return;
  }
- if(code !== "KEBA"){
-   if(loginError) loginError.textContent="Code d'accès incorrect. Utilisez KEBA.";
+ if(code !== "KEBA21){
+   if(loginError) loginError.textContent="Code d'accès incorrect. Utilisez KEBA21.";
    accessCodeInput?.focus();
    return;
  }

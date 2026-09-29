@@ -138,11 +138,11 @@ loginForm?.addEventListener("submit", (e)=>{
    userNameInput?.focus();
    return;
  }
- if(code !== "KEBA21){
-   if(loginError) loginError.textContent="Code d'accès incorrect. Utilisez KEBA21.";
+ if(code !== "KEBA2026"){
+   if(loginError) loginError.textContent="Code d'accès incorrect. Utilisez KEBA2026.";
    accessCodeInput?.focus();
    return;
- }
+}
  if(loginError) loginError.textContent="";
  currentUser=name;
  localStorage.setItem("keba_user", currentUser);

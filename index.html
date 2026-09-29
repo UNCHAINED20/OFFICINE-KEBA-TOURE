@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KÉBA PHAR — Votre santé, notre priorité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginGate" class="login-gate">
+    <div class="login-glow login-glow-one"></div>
+    <div class="login-glow login-glow-two"></div>
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="login-brand">
+        <span class="brand-mark">✚</span>
+        <div><strong>KÉBA <em>PHAR</em></strong><small>Votre santé, notre priorité</small></div>
+      </div>
+      <div class="login-icon">✓</div>
+      <span class="eyebrow login-eyebrow">Espace client</span>
+      <h1 id="loginTitle">Bienvenue chez KÉBA PHAR</h1>
+      <p>Entrez votre nom pour personnaliser votre expérience.</p>
+      <form id="loginForm" novalidate>
+        <label for="userName">Votre nom</label>
+        <input id="userName" name="userName" type="text" placeholder="Ex. Abdoulaye" autocomplete="name" required>
+        <label for="accessCode">Code d'accès</label>
+        <div class="password-field">
+          <input id="accessCode" name="accessCode" type="password" inputmode="text" placeholder="Entrez votre code" autocomplete="off" required>
+          <button type="button" class="show-code" id="showCode" aria-label="Afficher le code">◉</button>
+        </div>
+        <p id="loginError" class="login-error" role="alert"></p>
+        <button class="btn btn-green login-submit" type="submit">Entrer dans KÉBA PHAR <span>→</span></button>
+      </form>
+      <div class="login-trust"><span>✓</span> Expérience simple · rapide · sécurisée</div>
+    </section>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" data-route="home">
+        <span class="brand-mark">✚</span>
+        <span><strong>KÉBA <em>PHAR</em></strong><small>Votre santé, notre priorité</small></span>
+      </a>
+      <div class="search">
+        <span>⌕</span><input id="globalSearch" placeholder="Rechercher un produit, une marque..." autocomplete="off">
+      </div>
+      <nav class="desktop-nav">
+        <a href="#categories" data-route="categories">Catégories</a>
+        <a href="#advice" data-route="advice">Conseils</a>
+        <a href="#pharmacies" data-route="pharmacies">Pharmacies</a>
+      </nav>
+      <span id="userGreeting" class="user-greeting"></span><button class="icon-btn" title="Profil" data-route="profile">♙</button>
+      <button class="cart-btn" data-route="cart">🛒 <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><div class="brand"><span class="brand-mark">✚</span><strong>KÉBA <em>PHAR</em></strong></div><p>Votre santé, notre priorité.</p></div>
+      <div><h4>Navigation</h4><a href="#home">Accueil</a><a href="#categories">Catégories</a><a href="#advice">Conseils santé</a></div>
+      <div><h4>Services</h4><a href="#pharmacies">Pharmacies proches</a><a href="#orders">Mes commandes</a><a href="#profile">Mon profil</a></div>
+      <div><h4>Besoin d'aide ?</h4><p>Une question sur un produit ou une commande ?</p><button class="btn btn-green">Nous contacter</button></div>
+    </div>
+    <div class="copyright">© 2026 KÉBA PHAR — Prototype UI/UX</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <button id="backTop" class="back-top" type="button" aria-label="Retour en haut">↑</button>
+  <script src="app.js"></script>
+</body>
+</html>
